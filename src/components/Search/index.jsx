@@ -1,6 +1,7 @@
 import React from 'react'
 import InputAdornment from '@mui/material/InputAdornment'
 import ManageSearchIcon from '@mui/icons-material/ManageSearch'
+import Box from '@mui/material/Box'
 
 import { TextField } from '@mui/material'
 import { SearchContext } from '../../App'
@@ -35,23 +36,19 @@ const Search = () => {
   )
   return (
     <div>
-      <TextField
-        id="outlined-basic"
-        InputProps={{
-          startAdornment: (
-            <InputAdornment position="start">
-              <ManageSearchIcon />
-            </InputAdornment>
-          ),
-        }}
-        label="Поиск пиццы..."
-        type="search"
-        value={value}
-        onChange={onChangeInput}
-        ref={inputRef}
-        onClick={onClickClear}
-        variant="outlined"
-      />
+      <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
+        <ManageSearchIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
+        <TextField
+          id="input-with-sx"
+          label="Поиск пиццы..."
+          variant="standard"
+          type="search"
+          value={value}
+          onChange={onChangeInput}
+          ref={inputRef}
+          onClick={onClickClear}
+        />
+      </Box>
     </div>
   )
 }
