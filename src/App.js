@@ -1,5 +1,9 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
+import '@fontsource/roboto/300.css'
+import '@fontsource/roboto/400.css'
+import '@fontsource/roboto/500.css'
+import '@fontsource/roboto/700.css'
 
 import './scss/app.scss'
 
@@ -12,7 +16,6 @@ export const SearchContext = React.createContext('')
 
 function App() {
   const [searchValue, setSearchValue] = React.useState('')
-
   return (
     <div className="wrapper">
       <SearchContext.Provider value={{ searchValue, setSearchValue }}>
